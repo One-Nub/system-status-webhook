@@ -11,8 +11,6 @@ args = parser.parse_args()
 errString = "**{}** has failed!".format(args.serviceName)
 anotherExec = "status -l -n 15 {}".format(args.serviceName)
 errDesc = subprocess.run(['systemctl', 'status', '-l', '-n 15', args.serviceName], stdout = subprocess.PIPE).stdout.decode('utf-8')
-#errDesc = "test"
-#errDesc = subprocess.call(cmdToExec, shell = True) #This doesn't actually capture command output.
 
 message = {
 	'content': "<@156872400145874944>",
